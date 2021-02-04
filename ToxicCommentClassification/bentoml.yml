@@ -1,0 +1,43 @@
+version: 0.11.0
+kind: BentoService
+metadata:
+  created_at: 2021-02-04 03:17:34.020540
+  service_name: ToxicCommentClassification
+  service_version: 20210203191726_06780F
+  module_name: toxic_comment_classifier
+  module_file: toxic_comment_classifier.py
+env:
+  pip_packages:
+  - bentoml==0.11.0
+  - tensorflow==1.14.0
+  - keras==2.3.1
+  - pandas==1.2.1
+  - numpy==1.19.5
+  conda_env:
+    name: bentoml-default-conda-env
+    channels:
+    - defaults
+    dependencies: []
+  python_version: 3.8.5
+  docker_base_image: bentoml/model-server:0.11.0-py38
+apis:
+- name: predict
+  docs: "BentoService inference API 'predict', input: 'DataframeInput', output: 'JsonOutput'"
+  input_type: DataframeInput
+  output_type: JsonOutput
+  mb_max_batch_size: 2000
+  mb_max_latency: 10000
+  batch: true
+  input_config:
+    orient:
+    typ: frame
+    dtype:
+  output_config:
+    cors: '*'
+artifacts:
+- name: x_tokenizer
+  artifact_type: PickleArtifact
+  metadata: {}
+- name: model
+  artifact_type: KerasModelArtifact
+  metadata: {}

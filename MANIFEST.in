@@ -1,0 +1,2 @@
+include ToxicCommentClassification/bentoml.yml
+graft ToxicCommentClassification/artifacts
