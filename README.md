@@ -8,3 +8,9 @@ This project helps to classify comments based on the following toxicity levels.
 - threat
 - insult
 - identity hate
+### Dependencies
+- bentoml==0.11.0
+- tensorflow==1.14.0
+- keras==2.3.1
+- pandas==1.1.5
+- numpy==1.19.5
