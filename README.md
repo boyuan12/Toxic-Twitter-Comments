@@ -17,3 +17,4 @@ This project helps to classify comments based on the following toxicity levels.
 ### Quick Start Guide
 * Clone the project repository
 * Run the model.py file but be sure to have the required dependencies installed before running the model
+* Use the command ``bentoml serve ToxicCommentClassification:latest --run-with-ngrok``
