@@ -18,3 +18,8 @@ This project helps to classify comments based on the following toxicity levels.
 * Clone the project repository
 * Run the model.py file but be sure to have the required dependencies installed before running the model
 * Use the command ``bentoml serve ToxicCommentClassification:latest --run-with-ngrok`` to access the API endpoint
+* Create a curl request like the one shown below to classify a comment
+  ```curl -i \
+      --request POST \
+      --header "Content-Type: application/json" \
+      --data '[{"comment_text": "bad terrible"}]' \
