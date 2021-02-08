@@ -4,6 +4,9 @@
 .AppleDouble
 .LSOverride
 
+# Build file
+/chrome-extension/dist-dev
+
 # Icon must end with two \r
 Icon
 
